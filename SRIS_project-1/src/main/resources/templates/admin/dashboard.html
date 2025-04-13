@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Overall dashboard container styling */
+        .dashboard-container {
+            max-width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Logout button with a different color */
+        .logout-btn {
+            background: #dc3545;
+        }
+
+        .logout-btn:hover {
+            background: #b02a37;
+        }
+
+        /* Responsive styles for mobile devices */
+        @media screen and (max-width: 600px) {
+            .dashboard-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h2>Welcome to Dashboard</h2>
+        
+        <a href="readContact"><button class="btn">Read Contact</button></a>
+        <a href="uploadProject"><button class="btn">Upload Project</button></a>
+        <a href="readProject"><button class="btn">Read Project</button></a>
+        <a href="addCourse"><button class="btn">Add Course</button></a>
+        <a href="readCourse"><button class="btn">Read Course</button></a>
+        <a href="addTestimonial"><button class="btn">Add Testimonial</button></a>
+        <a href="readTestimonial"><button class="btn">Read Testimonial</button></a>
+        <a href="addImage"><button class="btn">Add Image</button></a>
+        <a href="readImage"><button class="btn">Read Image</button></a>
+        <a href="addAboutUs"><button class="btn">Add About Us</button></a>
+        <a href="readAboutUs"><button class="btn">Read About Us</button></a>
+        <a href="addInstructors"><button class="btn">Add instructors</button></a>
+        <a href="readInstructor"><button class="btn">Read instructors</button></a>
+        <a href="addlogo"><button class="btn">Add LogoInNavbar</button></a>
+        <a href="readLogo"><button class="btn">Read LogoOfNavbar</button></a>
+        <a href="changeCredentials"><button class="btn">Change Credentials</button></a>
+        <!-- Logout Button -->
+        <a href="/logout"><button class="btn logout-btn">Logout</button></a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Project</title>
+    <style>
+        /* Centering the form */
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .btn, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        input[type="file"] {
+            background: #fff;
+            border: 2px solid #ccc;
+        }
+
+        input[type="file"]:focus {
+            border-color: #007bff;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Project  Page</h1>
+        <a href="dashboard"><button class="btn">Dashboard Home</button></a>
+        
+        <form action=uploadProject method="POST" enctype="multipart/form-data">
+            <label for="image">Slider Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required style="width: 95%">
+
+            <button type="submit" class="btn">Submit</button>
+            <h2 class="error-message" th:text="${message}"></h2>
+        </form>
+    </div>
+
+</body>
+</html>

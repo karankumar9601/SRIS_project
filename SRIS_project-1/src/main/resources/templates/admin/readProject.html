@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+       
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+       
+        img {
+            width: 100px; 
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+        }
+
+    
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        
+        @media screen and (max-width: 600px) {
+            th, td {
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Read Project Page</h2>
+    <br><br>
+    <a href="dashboard"><button>Dashboard Home</button></a>
+    <br><br>
+    
+    <div class="table-container">
+                      <h2 style="color: red" th:text="${message}"></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>IMAGE</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="project : ${allProject}">
+                    <td th:text="${project.id}"></td>
+                    <td>
+                        <img alt="Uploaded Image" th:src="@{'/slider/' + ${project.image}}" />
+                    </td>
+                    <td>
+                        <a th:href="@{/admin/deleteProject/{id}(id=${project.id})}">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

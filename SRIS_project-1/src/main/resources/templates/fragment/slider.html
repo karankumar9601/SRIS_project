@@ -1,0 +1,10 @@
+
+    
+    <div class="container-fluid p-0 mb-5" xmlns:th="http://www.thymeleaf.org">
+    <div class="owl-carousel header-carousel position-relative">
+        <div class="owl-carousel-item position-relative" th:each="project : ${allProject}">
+            <img class="img-fluid" th:src="@{'/slider/' +${ project.image}}" alt="">
+        </div>
+    </div>
+</div>
+     

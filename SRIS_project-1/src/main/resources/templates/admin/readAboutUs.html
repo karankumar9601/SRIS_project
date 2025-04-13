@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readAbout Us</title>
+
+<style type="text/css">
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    img {
+        width: 80px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+</style>
+</head>
+<body>
+    <h2>Read AboutUS Page</h2>
+      <h2 style="color: red" th:text="${message}"></h2>
+    <br>
+    <br>
+    <a href="dashboard"><button>Dashboard Home</button></a>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>IMAGE</th>
+                <th>SCHOOL NAME</th>
+                <th>ABOUT US</th>
+                <th>ACTION</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="readaboutUs : ${allAboutUs}">
+                <td th:text="${readaboutUs.id}"></td>
+                <td>
+                    <img alt="" th:src="@{'/aboutUs/' + ${readaboutUs.image}}" />
+                </td>
+                <td th:text="${readaboutUs.schoolName}"></td>
+                <td th:text="${readaboutUs.message}"></td>
+                <td><a th:href="@{/admin/deleteAboutUs/{id}(id=${readaboutUs.id}) }"><button>Delete</button></a></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
